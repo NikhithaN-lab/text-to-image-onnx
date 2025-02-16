@@ -1,31 +1,33 @@
-# text-to-image-onnx
-Optimizing a text-to-image diffusion model using ONNX and TensorRT
+# Text-to-Image Model Optimization & ONNX Deployment
 
 ## Project Overview
+This project focuses on optimizing a **text-to-image diffusion model** for efficient inference. Using **Stable Diffusion Turbo (stabilityai/sd-turbo)**, I converted the **UNet model to ONNX**, making it ready for deployment on different platforms, including mobile and GPU-accelerated environments.
 
-This project explores optimizing Stable Diffusion for efficient text-to-image generation.
-It focuses on converting the model from PyTorch to ONNX and further optimizing inference using TensorRT.
+## Features & Achievements
+- **Stable Diffusion Turbo (stabilityai/sd-turbo)**: A lightweight model for **fast image generation**.
+- **ONNX Model Conversion**: Transformed the **PyTorch-based UNet model** into ONNX format.
+- **Efficient Model Execution**: Prepared the ONNX model for potential optimizations on **edge devices and GPUs**.
+- **Challenges Addressed**:
+  - Debugging ONNX conversion and ensuring **compatibility** with all required operations.
+  - **Reducing memory overhead** while maintaining high-quality image generation.
 
-## Features
+## Implementation Steps
+1. **Installed required dependencies**: PyTorch, TensorFlow, Diffusers, ONNX, and ONNX-TensorFlow.
+2. **Loaded the Stable Diffusion model** using Hugging Face’s Diffusers library.
+3. **Converted the UNet model to ONNX format**, enabling cross-platform deployment.
+4. **Validated the ONNX model** to ensure consistency with the original PyTorch model.
+5. **Deployment in Progress**: Actively working on optimizing and deploying the ONNX model.
 
-1. Uses Stable Diffusion Turbo (stabilityai/sd-turbo) for fast image generation.
-2. Converts the UNet model to ONNX for deployment.
-3. Currently optimizing inference with TensorRT for reduced latency.
+## Work in Progress: TensorRT Optimization (Upcoming)
+I plan to optimize the **ONNX-based UNet model** using **NVIDIA TensorRT** to:
+- Reduce **inference latency** and improve real-time performance.
+- Test **FP16 vs. INT8 quantization** for better memory efficiency.
+- Compare inference speed between **ONNX runtime and TensorRT execution**.
 
-## Ongoing Optimization: NVIDIA TensorRT for Faster Inference  
+## Next Steps
+- Convert the ONNX model into a **TensorRT engine (.trt file)**.
+- Tune execution parameters for optimized **batch size and kernel selection**.
+- Benchmark **performance improvements** against standard PyTorch inference.
 
-To improve inference speed and reduce memory usage, I am optimizing the ONNX-based **Stable Diffusion UNet model** using **NVIDIA TensorRT**.  
+---
 
-## Current Progress 
-1. Converted the Stable Diffusion UNet model to **ONNX format**.  
-2. Preparing to optimize ONNX model with **TensorRT** for efficient execution on NVIDIA GPUs.  
-
-## Challenges & Debugging
-1. **Precision Issues** – Testing FP16 vs. INT8 quantization for better performance.  
-2. **Compatibility Checks** – Ensuring TensorRT supports all required ONNX operations.  
-3. **Benchmarking** – Measuring inference speed improvement after conversion.  
-
-## Next Steps  
-1. Convert ONNX model to **TensorRT engine** (.trt file).  
-2. Optimize execution with **batch size tuning & kernel selection**.  
-3. Compare performance gains vs. standard PyTorch model.  
